@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tênis de Mesa | Ping Pong</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #e0e0e0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(0,0,0,0.7);
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 3px solid #ff3366;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      color: #ffeb3b;
+      text-shadow: 0 0 20px rgba(255,235,59,0.7);
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 0 20px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .text-content {
+      line-height: 1.7;
+    }
+
+    h2 {
+      color: #00d4ff;
+      margin: 1.8rem 0 1rem;
+      font-size: 2.1rem;
+      border-left: 6px solid #ff3366;
+      padding-left: 14px;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(6px);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .table th, .table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .table th {
+      background: rgba(0, 212, 255, 0.15);
+      color: #00d4ff;
+    }
+
+    .pingpong-court {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 5 / 3;
+      margin: 1.5rem auto;
+      background: #006400;
+      border: 12px solid #fff;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+
+    .line {
+      position: absolute;
+      background: #fff;
+    }
+
+    .center-line {
+      width: 100%;
+      height: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .side-line {
+      width: 4px;
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .ball {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      background: #ff3366;
+      border-radius: 50%;
+      box-shadow: 0 0 25px #ff3366aa;
+      animation: bounce 1.4s infinite alternate, move 6s infinite linear;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-180px); }
+    }
+
+    @keyframes move {
+      0%   { left: 10%; }
+      50%  { left: 75%; }
+      100% { left: 10%; }
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      margin: 1.5rem 0.8rem 0 0;
+      background: #ff3366;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      box-shadow: 0 6px 20px rgba(255,51,102,0.4);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(255,51,102,0.6);
+      background: #ff1a57;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem;
+      margin-top: 4rem;
+      background: rgba(0,0,0,0.6);
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Tênis de Mesa</h1>
+  <div class="subtitle">O esporte mais rápido do mundo</div>
+</header>
+
+<main>
+
+  <div class="container">
+    <div class="text-content">
+
+      <h2>O que é Tênis de Mesa?</h2>
+      <p>
+        Também conhecido como <strong>ping-pong</strong>, é um esporte de raquete jogado em uma mesa dividida por uma rede. 
+        Dois ou quatro jogadores batem em uma bolinha leve usando raquetes cobertas de borracha.
+      </p>
+
+      <h2>Características principais</h2>
+      <table class="table">
+        <tr><th>Item</th><th>Medida oficial</th></tr>
+        <tr><td>Mesa</td><td>2,74 m × 1,525 m</td></tr>
+        <tr><td>Altura da mesa</td><td>76 cm</td></tr>
+        <tr><td>Altura da rede</td><td>15,25 cm</td></tr>
+        <tr><td>Bola</td><td>40 mm • 2,7 g</td></tr>
+        <tr><td>Raquete</td><td>madeira + borracha (vermelha e preta)</td></tr>
+      </table>
+
+      <h2>Curiosidades</h2>
+      <ul style="padding-left: 1.8rem; line-height: 1.8;">
+        <li>A bola pode chegar a velocidades acima de <strong>100 km/h</strong></li>
+        <li>O ponto mais longo oficial durou <strong>2 horas e 12 minutos</strong></li>
+        <li>É um dos esportes com maior exigência de reflexos</li>
+        <li>China domina o esporte desde os anos 1950</li>
+      </ul>
+
+      <a href="https://www.worldtabletennis.com/" target="_blank" class="btn">Site Oficial WTT</a>
+      <a href="https://www.cbtm.org.br/" target="_blank" class="btn">CBTM – Brasil</a>
+
+    </div>
+
+    <div>
+      <div class="pingpong-court">
+        <div class="line center-line"></div>
+        <div class="line side-line"></div>
+        <div class="ball"></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Feito com ♥ para amantes do tênis de mesa • 2025
+</footer>
+
+<script>
+  // Pequena interatividade extra (opcional)
+  document.addEventListener('mousemove', (e) => {
+    const ball = document.querySelector('.ball');
+    if (!ball) return;
+    
+    const x = e.clientX / window.innerWidth * 100;
+    const y = e.clientY / window.innerHeight * 100;
+    
+    ball.style.transition = 'transform 0.6s ease-out';
+    ball.style.transform = `translate(${x*0.4 - 50}%, ${y*0.3 - 80}px)`;
+  });
+</script>
+
+</body>
+</html>
